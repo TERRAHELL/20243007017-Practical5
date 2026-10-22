@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="municipalities_array">
+
+        <!-- Index 0: Beijing / 北京 -->
+        <item>Beijing is the capital of China and one of its four municipalities directly administered by the central government. Located in northern China, the city has served as a political and cultural center for centuries. The Forbidden City, once the imperial palace of the Ming and Qing dynasties, is now the Palace Museum. Other well-known landmarks include the Temple of Heaven, the Summer Palace, and sections of the Great Wall near the city. Beijing combines historical neighborhoods and traditional architecture with modern universities, research centers, and public transport. It remains an important destination for visitors interested in Chinese history and culture.</item>
+
+        <!-- Index 1: Shanghai / 上海 -->
+        <item>Shanghai is a municipality in eastern China, located near the mouth of the Yangtze River. It is an important center for finance, trade, shipping, and technology. The Huangpu River divides the central city into areas often described as Puxi and Pudong. The Bund is famous for its historic waterfront buildings, while the Lujiazui skyline in Pudong features modern skyscrapers. Shanghai grew into a major international port through trade and has continued to develop extensive transport and business networks. Its museums, neighborhoods, parks, and restaurants reflect a mixture of local traditions and international influences. The city is also a leading destination for business and tourism.</item>
+
+        <!-- Index 2: Chongqing / 重庆 -->
+        <item>Chongqing is a municipality in southwest China on the upper reaches of the Yangtze River. The city is known for its steep hills, bridges, rivers, and layered urban landscape. The Jialing River joins the Yangtze near its central urban area, shaping the geography and transport system. Chongqing has long been an important inland trading and industrial center. Its wider municipality includes mountainous districts, rural communities, and parts of the Three Gorges region. Visitors often explore riverside neighborhoods and enjoy the local hot pot, which is known for its bold and spicy flavors. Today, Chongqing combines distinctive natural scenery with rapidly developed urban infrastructure.</item>
+
+        <!-- Index 3: Tianjin / 天津 -->
+        <item>Tianjin is a municipality in northern China near Beijing and the Bohai Sea. The Haihe River runs through the city and has supported transportation and commerce for many generations. Tianjin developed into an important port and industrial center, connecting inland northern China with maritime trade routes. Its architecture includes historic streets and buildings influenced by different periods of urban development. The Binhai New Area contains major port facilities and supports manufacturing, logistics, and other businesses. Popular sights include the riverside waterfront and the Tianjin Eye, a large observation wheel. Tianjin plays a significant role in regional cooperation across Beijing, Tianjin, and Hebei.</item>
+
+    </string-array>
+
+</resources>

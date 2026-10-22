@@ -1,3 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">quiz9_p5</string>
+
+    <!-- Application Name -->
+    <string name="app_name">Chinese Municipalities</string>
+
+    <!-- Main Screen -->
+    <string name="main_title">Municipalities in China</string>
+    <string name="input_label">I want to know about:</string>
+    <string name="input_hint">Enter a municipality name</string>
+
+    <!-- Validation Messages -->
+    <string name="error_empty_input">Please enter a municipality name</string>
+    <string name="error_invalid_municipality">Invalid municipality. Please enter Beijing, Shanghai, Tianjin or Chongqing.</string>
+
+    <!-- Second Screen -->
+    <string name="visit_site">Visit site</string>
+
 </resources>
