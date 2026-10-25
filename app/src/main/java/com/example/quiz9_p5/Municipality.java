@@ -1,6 +1,10 @@
+
 package com.example.quiz9_p5;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +24,7 @@ public class Municipality extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Step 1: Load municipality layout
+        // Step 1: Load the layout
         setContentView(R.layout.activity_municipality);
 
         // Step 2: Receive municipality name
@@ -28,13 +32,13 @@ public class Municipality extends AppCompatActivity {
                 EXTRA_MUNICIPALITY_NAME
         );
 
-        // Step 3: Validate input
+        // Step 3: Validate the name
         TextProcessor processor = new TextProcessor();
 
         String validName =
                 processor.processMunicipality(receivedName);
 
-        // Step 4: Handle invalid data
+        // Step 4: Handle invalid input
         if (validName == null) {
             Toast.makeText(
                     this,
@@ -64,31 +68,46 @@ public class Municipality extends AppCompatActivity {
         int colorResource;
         int informationIndex;
 
-        // Step 7: Select municipality resources
+        // Website URL
+        String websiteUrl;
+
+        // Step 7: Select resources and website
         switch (validName) {
 
             case "Beijing":
                 imageResource = R.drawable.beijing;
                 colorResource = R.color.municipality_beijing;
                 informationIndex = 0;
+
+                websiteUrl =
+                        "https://english.beijing.gov.cn/";
                 break;
 
             case "Shanghai":
                 imageResource = R.drawable.shanghai;
                 colorResource = R.color.municipality_shanghai;
                 informationIndex = 1;
+
+                websiteUrl =
+                        "https://english.shanghai.gov.cn/";
                 break;
 
             case "Chongqing":
                 imageResource = R.drawable.chongqing;
                 colorResource = R.color.municipality_chongqing;
                 informationIndex = 2;
+
+                websiteUrl =
+                        "https://english.cq.gov.cn/";
                 break;
 
             case "Tianjin":
                 imageResource = R.drawable.tianjin;
                 colorResource = R.color.municipality_tianjin;
                 informationIndex = 3;
+
+                websiteUrl =
+                        "https://en.tj.gov.cn/";
                 break;
 
             default:
@@ -96,11 +115,11 @@ public class Municipality extends AppCompatActivity {
                 return;
         }
 
-        // Step 8: Get municipality colour
+        // Step 8: Get municipality theme colour
         int municipalityColor =
                 ContextCompat.getColor(this, colorResource);
 
-        // Step 9: Update city name and image
+        // Step 9: Update title and image
         tvName.setText(validName);
         tvName.setBackgroundColor(municipalityColor);
 
@@ -113,20 +132,19 @@ public class Municipality extends AppCompatActivity {
                         R.array.municipalities_array
                 );
 
-        // Step 11: Display city information
+        // Step 11: Display municipality information
         if (informationIndex < histories.length) {
             tvInfo.setText(histories[informationIndex]);
         }
 
-        // Step 12: Set information text colour
+        // Step 12: Apply theme colours
         tvInfo.setTextColor(municipalityColor);
 
-        // Step 13: Set button background colour
         btnVisitSite.setBackgroundTintList(
                 ColorStateList.valueOf(municipalityColor)
         );
 
-        // Step 14: Set readable text colours
+        // Step 13: Set readable text colours
         int textColorResource;
 
         if (validName.equals("Chongqing")) {
@@ -142,5 +160,47 @@ public class Municipality extends AppCompatActivity {
 
         tvName.setTextColor(textColor);
         btnVisitSite.setTextColor(textColor);
+
+        // ============================================
+        // Step 14: Implement implicit Intent
+        // ============================================
+
+        btnVisitSite.setOnClickListener(v -> {
+
+            // Open the official website
+            openOfficialWebsite(websiteUrl);
+
+        });
+    }
+
+    /**
+     * Open the municipality's official website.
+     *
+     * @param url Official website URL
+     */
+    private void openOfficialWebsite(String url) {
+
+        // Step 1: Convert URL string to Uri
+        Uri webpage = Uri.parse(url);
+
+        // Step 2: Create an implicit Intent
+        Intent browserIntent = new Intent(
+                Intent.ACTION_VIEW,
+                webpage
+        );
+
+        // Step 3: Ask Android to open the website
+        try {
+            startActivity(browserIntent);
+
+        } catch (ActivityNotFoundException e) {
+
+            // Step 4: Handle missing browser application
+            Toast.makeText(
+                    this,
+                    "No application available to open the website",
+                    Toast.LENGTH_LONG
+            ).show();
+        }
     }
 }
