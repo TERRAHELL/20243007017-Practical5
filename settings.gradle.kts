@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "quiz9_p5"
+rootProject.name = "PracticalFive"
 include(":app")
  
