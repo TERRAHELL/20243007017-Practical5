@@ -3,22 +3,79 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
 
+    android:id="@+id/municipalityRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
+    android:fitsSystemWindows="true"
     android:background="@color/color_default_background">
 
-    <!-- Selected municipality / 选择的直辖市 -->
+    <!-- ===================================== -->
+    <!-- 1. Municipality Name -->
+    <!-- ===================================== -->
+
     <TextView
         android:id="@+id/tvSelectedMunicipality"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/color_text_dark"
-        android:textSize="30sp"
+        android:layout_height="56dp"
+        android:background="@color/municipality_tianjin"
+        android:textColor="@color/color_text_light"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:gravity="center"
         tools:text="Beijing" />
+
+    <!-- ===================================== -->
+    <!-- 2. Municipality Image -->
+    <!-- ===================================== -->
+
+    <ImageView
+        android:id="@+id/ivCity"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:src="@drawable/chinese_municipalities"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/main_title"
+        tools:src="@drawable/beijing" />
+
+    <!-- ===================================== -->
+    <!-- 3. Scrollable Information -->
+    <!-- ===================================== -->
+
+    <ScrollView
+        android:id="@+id/scrollCityInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvCityInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/color_text_dark"
+            android:lineSpacingExtra="4dp"
+            tools:text="Beijing is the capital of China and one of its four municipalities directly administered by the central government." />
+
+    </ScrollView>
+
+    <!-- ===================================== -->
+    <!-- 4. Visit Site Button -->
+    <!-- ===================================== -->
+
+    <Button
+        android:id="@+id/btnVisitSite"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/municipality_tianjin"
+        android:text="@string/visit_site"
+        android:textColor="@color/color_text_light"
+        android:textSize="16sp"
+        android:textAllCaps="false"/>
 
 </LinearLayout>
